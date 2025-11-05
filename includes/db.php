@@ -1,12 +1,11 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "accendo_lms";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "accendo_lms"; // must match your actual database name
 
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
+$conn = mysqli_connect($servername, $username, $password, $database);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
 ?>
